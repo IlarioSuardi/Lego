@@ -35,19 +35,34 @@ public class ProdottoLego {
         return somma;
     }
 
-    public void elencoStessoColore(int r, int g, int b){
-        for(int i=0; i<counter; i++){
-        Mattoncino m=mattoncini[i];
-        if(m.getRed()==r && m.getGreen()==g && m.getBlue()==b){
-            System.out.println(m);
+    public String elencoColore(int r, int g, int b) {
+        String elenco="";
+        int x=0;
+        for (int i = 0; i < numeroMattoncini; i++) {
+            Mattoncino n = mattoncini[i];
+            if (n.getRed() == r && n.getGreen() == g && n.getBlue() == b) {
+                elenco=elenco + n.toString();
+                x++;
+            }
         }
+        if(x==0) {
+            elenco = "Nessun mattoncino trovato con questo colore.\n";
+        }
+        return elenco;
     }
 
-    public void elencoStessoCodice(){
-
+    public int numeroMattonciniStessoCodice (int codiceMattoncino){
+        int n=1;
+        for (int i=0; i<counter; i++){
+            if (mattoncini[i].getCodice()==codiceMattoncino){
+                n++;
+            }
+        }
+        return n;
     }
+
 
     public String toString(){
-        return "ProdottoLego:" +nome + " CodiceUnivoco:" +codiceUnivoco;
+        return "Prodotto Lego: " +nome + " (codice univoco: " +codiceUnivoco + ")";
     }
 }

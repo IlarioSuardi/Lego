@@ -19,6 +19,22 @@ public class Mattoncino {
         this.altezza=altezza;
     }
 
+    public int getCodice() {
+        return codice;
+    }
+
+    public double getRed() {
+        return r;
+    }
+
+    public double getGreen() {
+        return g;
+    }
+
+    public double getBlue() {
+        return b;
+    }
+
     public double getPeso() {
         return peso;
     }
